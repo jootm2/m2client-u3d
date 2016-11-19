@@ -11,7 +11,7 @@ public class M2ImagePicker : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		string libPath = Path.Combine(Path.Combine(Application.dataPath, "Data"), LibName);
+		string libPath = Path.Combine(Path.Combine(SDK.RootPath, "Data"), LibName);
 		RawImage component = gameObject.GetComponent<RawImage> ();
 		component.texture = M2Image.M2Image.Image (libPath, ImageIndex);
 	}
