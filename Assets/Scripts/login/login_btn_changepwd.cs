@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class CloseBtn : MonoBehaviour, IPointerUpHandler {
-	
+public class login_btn_changepwd : MonoBehaviour, IPointerUpHandler {
+
 	public void OnPointerUp (PointerEventData eventData) {
 		RectTransform rect = gameObject.GetComponent<RectTransform> ();
 		if (RectTransformUtility.RectangleContainsScreenPoint (gameObject.GetComponent<RectTransform> (), eventData.position)) {
-			Application.Quit ();
+			GameObject.Find ("canvas_login_main").GetComponent<Canvas> ().enabled = false;
+			GameObject.Find ("canvas_changepwd_main").GetComponent<Canvas> ().enabled = true;
 		}
 	}
-
-
 	// Use this for initialization
 	void Start () {
 	
